@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:52:32 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/17 15:48:47 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:57:35 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,23 @@ PhoneBook::PhoneBook()
 
 void	PhoneBook::addContact()
 {
-	std::string _firstName;
-	std::string _lastName;
-	std::string _nickname;
-	std::string _phoneNumber;
-	std::string _darkestSecret;
+	std::string input;
 
 	std::cout << "First name: ";
-	std::cin >> _firstName;
-	contacts[index].setFirstName(_firstName);
+	std::cin >> input;
+	contacts[index].setFirstName(input);
 	std::cout << "Last name: ";
-	std::cin >> _lastName;
-	contacts[index].setLastName(_lastName);
+	std::cin >> input;
+	contacts[index].setLastName(input);
 	std::cout << "Nickname: ";
-	std::cin >> _nickname;
-	contacts[index].setNickname(_nickname);
+	std::cin >> input;
+	contacts[index].setNickname(input);
 	std::cout << "Phone number: ";
-	std::cin >> _phoneNumber;
-	contacts[index].setPhoneNumber(_phoneNumber);
+	std::cin >> input;
+	contacts[index].setPhoneNumber(input);
 	std::cout << "Darkest secret: ";
-	std::cin >> _darkestSecret;
-	contacts[index].setDarkestSecret(_darkestSecret);
+	std::cin >> input;
+	contacts[index].setDarkestSecret(input);
 	std::cout << std::endl;
 	index = (index + 1) % 8;
 }

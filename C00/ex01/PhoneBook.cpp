@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:52:32 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/17 15:39:50 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:48:47 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	PhoneBook::addContact()
 	std::cout << "Darkest secret: ";
 	std::cin >> _darkestSecret;
 	contacts[index].setDarkestSecret(_darkestSecret);
+	std::cout << std::endl;
 	index = (index + 1) % 8;
 }
 
@@ -66,7 +67,8 @@ void	PhoneBook::searchContact()
 		std::cout << "Nickname: " << contacts[i].getNickname() << std::endl;
 		std::cout << "Phone number: " << contacts[i].getPhoneNumber() << std::endl;
 		std::cout << "Darkest secret: " << contacts[i].getDarkestSecret() << std::endl;
+		std::cout << std::endl;
 	}
 	else
-		std::cout << "Invalid index" << std::endl;
+		std::cout << "Invalid index" << std::endl << std::endl;
 }

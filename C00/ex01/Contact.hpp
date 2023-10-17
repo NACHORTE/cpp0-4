@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:32:12 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/17 13:54:56 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:19:15 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class Contact
 		void setNickname(std::string nickname);
 		void setPhoneNumber(std::string phoneNumber);
 		void setDarkestSecret(std::string darkestSecret);
-		std::string getFirstName();
-		std::string getLastName();
-		std::string getNickname();
-		std::string getPhoneNumber();
-		std::string getDarkestSecret();
+		std::string getFirstName() const;
+		std::string getLastName() const;
+		std::string getNickname() const;
+		std::string getPhoneNumber() const;
+		std::string getDarkestSecret() const;
 };

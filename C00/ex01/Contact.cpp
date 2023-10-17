@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:52:24 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/17 14:01:27 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:21:08 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,27 @@ void	Contact::setDarkestSecret(std::string _darkestSecret)
 	darkestSecret = _darkestSecret;
 }
 
-std::string	Contact::getFirstName()
+std::string	Contact::getFirstName() const
 {
 	return firstName;
 }
 
-std::string	Contact::getLastName()
+std::string	Contact::getLastName() const
 {
 	return lastName;
 }
 
-std::string	Contact::getNickname()
+std::string	Contact::getNickname() const
 {
 	return nickname;
 }
 
-std::string	Contact::getPhoneNumber()
+std::string	Contact::getPhoneNumber() const
 {
 	return phoneNumber;
 }
 
-std::string	Contact::getDarkestSecret()
+std::string	Contact::getDarkestSecret() const
 {
 	return darkestSecret;
 }

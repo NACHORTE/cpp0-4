@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:52:32 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/17 16:17:46 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/10/17 21:05:06 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	PhoneBook::searchContact() const
 	std::cout << "Enter an index: ";
 	std::string input;
 	std::cin >> input;
-
 	std::istringstream iss(input);
 	int i;
 	if (iss >> i)

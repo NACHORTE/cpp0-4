@@ -1,9 +1,12 @@
-NAME := #NAME
+NAME := zombies
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
-SRC := main.cpp
+SRC := main.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

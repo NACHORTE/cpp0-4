@@ -1,9 +1,11 @@
-NAME := file_replace
+NAME := ScavTrap
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=leak
+CFLAGS := -Wall -Wextra -Werror -std=c++98
 
-SRC := main.cpp
+SRC := main.cpp \
+		ScavTrap.cpp \
+		ClapTrap.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

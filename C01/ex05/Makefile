@@ -1,9 +1,10 @@
-NAME := #NAME
+NAME := harl
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=leak
 
-SRC := main.cpp
+SRC := main.cpp \
+		Harl.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

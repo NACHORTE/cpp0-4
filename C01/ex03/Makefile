@@ -1,9 +1,12 @@
-NAME := #NAME
+NAME := fight
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -std=c++98 #-fsanitize=leak
 
-SRC := main.cpp
+SRC := main.cpp \
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

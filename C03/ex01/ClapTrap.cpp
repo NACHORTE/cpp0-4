@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 18:29:11 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/22 19:43:59 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/10/29 16:30:08 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ ClapTrap::ClapTrap(const ClapTrap & src)
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &rhs)
 {
-	*this = rhs;
+	this->name = rhs.name;
+    this->hitPoints = rhs.hitPoints;
+    this->energyPoints = rhs.energyPoints;
+    this->attackDamage = rhs.attackDamage;
 	std::cout << "ClapTrap " << this->name << " created" << std::endl;
 	return (*this);
 }
@@ -63,5 +66,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	this->energyPoints--;
 	this->hitPoints += amount;
-	std::cout << "ClapTrap " << this->name << " be repaired " << amount << " points of energy!" << std::endl;
+	std::cout << "ClapTrap " << this->name << " be repaired " << amount << " hitPoints!" << std::endl;
 }

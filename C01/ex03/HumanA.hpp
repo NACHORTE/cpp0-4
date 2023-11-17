@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 20:40:24 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/19 20:53:23 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/11/17 20:48:46 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanA
 		std::string name;
 		Weapon& weapon;
 	public:
-		HumanA(std::string name, Weapon& weapon);
+		HumanA(std::string const name, Weapon& weapon);
 		~HumanA();
-		void attack();
+		void attack() const;
 };

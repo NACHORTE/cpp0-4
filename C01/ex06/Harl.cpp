@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:41:37 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/22 13:09:10 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/11/17 21:17:59 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,28 @@ void Harl::error(void)
 
 void    Harl::complain(std::string level)
 {
-    t_func  funcs[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
-    std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR"};
-    int i = 0;
-    while (i < 4 && levels[i].compare(level))
-        i++ ;
-    if (i < 4)
+    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*f[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	int i;
+	for (i = 0; i < 4; i++)
+		if (level == levels[i])
+			break;
+	switch(i)
 	{
-		while (i < 4)
-		{
-			(this->*funcs[i++])();
-			std::cout << std::endl;
-		}
-	}
-    else
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		case 0:
+			(this->*f[0])();
+			// Intentional fallthrough
+		case 1:
+			(this->*f[1])();
+			// Intentional fallthrough
+		case 2:
+			(this->*f[2])();
+			// Intentional fallthrough
+		case 3:
+			(this->*f[3])();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
+	};
 }

@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 11:11:11 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/21 12:26:30 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/11/26 12:13:45 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cout << "Error: wrong number of arguments" << std::endl;
+		return (1);
+	}
+	if (std::string(argv[2]).empty())
+	{
+		std::cout << "Error: empty string" << std::endl;
 		return (1);
 	}
 	infile.open(argv[1]);

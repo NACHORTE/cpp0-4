@@ -1,13 +1,9 @@
-NAME := FragTrap
+NAME := #NAME
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98
+CFLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
-SRC := main.cpp \
-	ScavTrap.cpp \
-	ClapTrap.cpp \
-	FragTrap.cpp
-	
+SRC := main.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

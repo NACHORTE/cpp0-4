@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 19:38:57 by iortega-          #+#    #+#             */
-/*   Updated: 2023/12/02 11:48:16 by iortega-         ###   ########.fr       */
+/*   Created: 2023/10/29 17:54:24 by iortega-          #+#    #+#             */
+/*   Updated: 2023/10/29 17:55:11 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "ClapTrap.hpp"
+#include "Cat.hpp"
 
-class ScavTrap : public ClapTrap
+Cat::Cat(void) : Animal("Cat")
 {
-	private:
-		ScavTrap();
-	public:
-		ScavTrap(std::string name);
-		~ScavTrap(void);
-		void attack(std::string const & target);
-		void guardGate(void);
-		ScavTrap & operator=(const ScavTrap & rhs);
-};
+	std::cout << "Cat created" << std::endl;
+}
+
+Cat::~Cat(void)
+{
+	std::cout << "Cat destroyed" << std::endl;
+}
+
+void Cat::makeSound(void) const
+{
+	std::cout << "MIAU!" << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 16:43:12 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/22 16:43:51 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/11/27 19:33:33 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
     Fixed const c( 42.42f );
     Fixed const d( b );
 
-    a = Fixed( 1234.4321f );
+    a = Fixed( 1234.42f );
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;

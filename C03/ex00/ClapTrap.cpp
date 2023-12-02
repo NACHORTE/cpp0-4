@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 18:29:11 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/29 16:30:23 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/12/02 11:58:56 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,19 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap::ClapTrap(const ClapTrap & src)
 {
+	std::cout << "ClapTrap " << this->name << " created" << std::endl;
 	*this = src;
 }
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &rhs)
 {
-	*this = rhs;
-	std::cout << "ClapTrap " << this->name << " created" << std::endl;
+	if (this != &rhs)
+	{
+		name = rhs.name;
+		hitPoints = rhs.hitPoints;
+		energyPoints = rhs.energyPoints;
+		attackDamage = rhs.attackDamage;
+	}
 	return (*this);
 }
 
@@ -45,17 +51,32 @@ void ClapTrap::attack(std::string const & target)
 		std::cout << "ClapTrap " << this->name << " has no energy!" << std::endl;
 		return ;
 	}
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
+		return ;
+	}
 	this->energyPoints--;
 	std::cout << "ClapTrap " << this->name << " attack " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
+		return ;
+	}
 	std::cout << "ClapTrap " << this->name << " take " << amount << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
+		return ;
+	}
 	if (this->energyPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->name << " has no energy!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:38:57 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/29 16:31:25 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/12/02 11:56:00 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		~ScavTrap(void);
 		void attack(std::string const & target);
+		ScavTrap & operator=(const ScavTrap & rhs);
 		void guardGate(void);
 };

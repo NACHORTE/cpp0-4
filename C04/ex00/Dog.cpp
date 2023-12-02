@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 16:57:05 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/29 16:58:34 by iortega-         ###   ########.fr       */
+/*   Created: 2023/10/29 17:56:52 by iortega-          #+#    #+#             */
+/*   Updated: 2023/10/29 17:57:54 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
 
-class FlagTrap : public ClapTrap
+Dog::Dog(void) : Animal("Dog")
 {
-	public:
-		FlagTrap(std::string name);
-		~FlagTrap(void);
-		void highFivesGuys(void);
-};
+	std::cout << "Dog created" << std::endl;
+}
+
+Dog::~Dog(void)
+{
+	std::cout << "Dog destroyed" << std::endl;
+}
+
+void Dog::makeSound(void) const
+{
+	std::cout << "GUAU!" << std::endl;
+}

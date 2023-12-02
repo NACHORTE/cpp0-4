@@ -1,13 +1,12 @@
-NAME := FragTrap
+NAME := Animal
 
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC := main.cpp \
-	ScavTrap.cpp \
-	ClapTrap.cpp \
-	FragTrap.cpp
-	
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

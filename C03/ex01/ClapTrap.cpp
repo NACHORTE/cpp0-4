@@ -6,7 +6,7 @@
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 18:29:11 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/29 16:30:08 by iortega-         ###   ########.fr       */
+/*   Updated: 2023/12/02 11:58:40 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,29 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap::ClapTrap(const ClapTrap & src)
 {
+	std::cout << "ClapTrap " << this->name << " created" << std::endl;
 	*this = src;
 }
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &rhs)
 {
-	this->name = rhs.name;
-    this->hitPoints = rhs.hitPoints;
-    this->energyPoints = rhs.energyPoints;
-    this->attackDamage = rhs.attackDamage;
-	std::cout << "ClapTrap " << this->name << " created" << std::endl;
+	if (this != &rhs)
+	{
+		name = rhs.name;
+		hitPoints = rhs.hitPoints;
+		energyPoints = rhs.energyPoints;
+		attackDamage = rhs.attackDamage;
+	}
 	return (*this);
 }
 
 void ClapTrap::attack(std::string const & target)
 {
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
+		return ;
+	}
 	if (this->energyPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->name << " has no energy!" << std::endl;
@@ -54,11 +62,21 @@ void ClapTrap::attack(std::string const & target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
+		return ;
+	}
 	std::cout << "ClapTrap " << this->name << " take " << amount << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
+		return ;
+	}
 	if (this->energyPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->name << " has no energy!" << std::endl;

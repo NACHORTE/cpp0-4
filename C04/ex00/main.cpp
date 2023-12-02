@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 19:38:57 by iortega-          #+#    #+#             */
-/*   Updated: 2023/12/02 11:48:16 by iortega-         ###   ########.fr       */
+/*   Created: 2023/10/29 17:58:27 by iortega-          #+#    #+#             */
+/*   Updated: 2023/10/29 17:58:58 by iortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-class ScavTrap : public ClapTrap
+int main()
 {
-	private:
-		ScavTrap();
-	public:
-		ScavTrap(std::string name);
-		~ScavTrap(void);
-		void attack(std::string const & target);
-		void guardGate(void);
-		ScavTrap & operator=(const ScavTrap & rhs);
-};
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+
+	return 0;
+}

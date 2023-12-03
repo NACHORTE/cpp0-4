@@ -1,28 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 17:54:24 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/29 17:55:11 by iortega-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Cat::Cat(void) : Animal()
 {
-	std::cout << "Cat created" << std::endl;
+	type = "Cat";
+	std::cout<<"Cat default constructor called"<<std::endl;
+}
+
+Cat::Cat(const Cat & src) : Animal(src)
+{
+	std::cout<<"Cat copy constructor called"<<std::endl;
+	*this = src;
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Cat destroyed" << std::endl;
+	std::cout<<"Cat destructor called"<<std::endl;
+}
+
+Cat &Cat::operator=(const Cat &rhs)
+{
+	if (this != &rhs)
+	{
+		this->type = rhs.type;
+	}
+	return (*this);
 }
 
 void Cat::makeSound(void) const
 {
-	std::cout << "MIAU!" << std::endl;
+	std::cout<<"Meow"<<std::endl;
 }

@@ -1,28 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 17:56:52 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/29 17:57:54 by iortega-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Dog::Dog(void) : Animal()
 {
-	std::cout << "Dog created" << std::endl;
+	type = "Dog";
+	std::cout<<"Dog default constructor called"<<std::endl;
+}
+
+Dog::Dog(const Dog & src) : Animal(src)
+{
+	std::cout<<"Dog copy constructor called"<<std::endl;
+	*this = src;
 }
 
 Dog::~Dog(void)
 {
-	std::cout << "Dog destroyed" << std::endl;
+	std::cout<<"Dog destructor called"<<std::endl;
+}
+
+Dog &Dog::operator=(const Dog &rhs)
+{
+	if (this != &rhs)
+	{
+		this->type = rhs.type;
+	}
+	return (*this);
 }
 
 void Dog::makeSound(void) const
 {
-	std::cout << "GUAU!" << std::endl;
+	std::cout<<"Woof"<<std::endl;
 }

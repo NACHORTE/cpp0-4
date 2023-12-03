@@ -1,51 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: iortega- <iortega-@student.42madrid.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 17:39:16 by iortega-          #+#    #+#             */
-/*   Updated: 2023/10/29 17:43:38 by iortega-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void) : type("Animal")
 {
-	std::cout << "Animal created" << std::endl;
+	std::cout<<"Animal default constructor called"<<std::endl;
 }
 
-Animal::Animal(std::string type)
+Animal::Animal(const Animal & src)
 {
-	this->type = type;
-	std::cout << "Animal created" << std::endl;
+	std::cout<<"Animal copy constructor called"<<std::endl;
+	*this = src;
 }
 
 Animal::~Animal(void)
 {
-	std::cout << "Animal destroyed" << std::endl;
+	std::cout<<"Animal destructor called"<<std::endl;
 }
 
-Animal::Animal(const Animal &rhs)
+Animal &Animal::operator=(const Animal &rhs)
 {
-	std::cout << "Copy Animal created" << std::endl;
-	*this = rhs;
-}
-
-Animal & Animal::operator=(const Animal &rhs)
-{
-	this->type = rhs.type;
+	if (this != &rhs)
+	{
+		this->type = rhs.type;
+	}
 	return (*this);
-}
-
-std::string Animal::getType(void) const
-{
-	return (this->type);
-}
-
-void Animal::makeSound(void) const
-{
-	std::cout << "Animal sound" << std::endl;
 }

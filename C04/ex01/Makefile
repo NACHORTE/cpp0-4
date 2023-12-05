@@ -1,9 +1,15 @@
-NAME := #NAME
+NAME := animal
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -std=c++98
 
-SRC := main.cpp
+SRC := main.cpp\
+	WrongAnimal.cpp\
+	Animal.cpp\
+	Dog.cpp\
+	Cat.cpp\
+	Brain.cpp\
+	WrongCat.cpp
 
 OBJ := $(SRC:.cpp=.o)
 
